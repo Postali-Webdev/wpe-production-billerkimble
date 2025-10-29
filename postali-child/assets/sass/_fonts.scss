@@ -1,0 +1,200 @@
+/**
+ * Web Font Styles, H Styles, Body Text Styles
+ *
+ * @package Postali Child
+ * @author Postali LLC
+**/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Lato&display=swap');
+
+
+/* Fonts */
+body, h1, h2, h3, h4, h5, h6, p, a, ul {
+    // color: $body-text-color;
+} 
+p, a, ul, ol {
+
+}
+ul li, ol li {
+    margin: 0 0 0 20px;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: $lato;
+    color: $white;
+}
+dl, blockquote, img {
+
+}
+
+a {
+    text-decoration:none;
+    -webkit-transition:$trans;
+    transition:$trans;
+    &:hover {
+        color:$yellow;
+        text-decoration:underline;
+    }
+}
+
+.btn {
+    @include button-style;
+}
+
+h1, h2, h3, h4 {
+    color:$white;
+    font-family: $josefin;
+    line-height: 100%;
+    span {
+        color:$yellow;
+    }
+}
+
+h1 {
+    font-size: 52px;
+    line-height: 125%;
+    @media screen and (max-width: $screen-xs) {
+        font-size: 36px;
+    }
+}
+h2 {
+    font-size: 48px;
+    line-height: 125%;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    @media screen and (max-width: $screen-xs) {
+        font-size: 32px;
+    }
+}
+h3 {
+    font-size: 32px;
+    line-height: 125%;
+    &.small {
+        font-size: 24px;
+    }
+    @media screen and (max-width: $screen-xs) {
+        font-size: 20px;
+        line-height: 24px;
+    }
+}
+h4 {
+    font-size: 24px;
+    line-height: 125%;
+    font-weight: normal !important;
+}
+
+p {
+    font-size:16px;
+    line-height: 24px;
+    margin-bottom:30px !important;
+    color:$white;
+    font-family: $lato;
+    a {
+        font-family: inherit;
+        color:$yellow;
+        text-decoration: none;
+        &:hover {
+            color:$yellow;
+            text-decoration: underline;
+        }
+    }
+    &.testimonial-author {
+        font-size: 24px;
+        margin-bottom: 0 !important;
+        font-style: italic;
+        font-weight: 700;
+    }
+    &.small {
+        font-size: 12px;
+        font-family: $josefin;
+    }
+    &.large.caps {
+        font-size: 20px;
+        text-transform: capitalize;
+        font-family: $josefin;
+    }
+    &.xlarge {
+        font-size: 64px;
+        font-family: $josefin;
+        line-height: 100%;
+        margin-bottom: 15px !important;
+    }
+    &.yellow,
+    .yellow {
+        color:$yellow;
+    }
+    .big-yellow {
+        color: $yellow;
+        display: block;
+        font-weight: bold;
+        font-family: $josefin;
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 24px;
+        padding: 20px 0;
+    }
+}
+
+ul, ol {
+    display: block;
+    margin-bottom: 30px !important;
+    margin-left: 0 !important;
+    li {
+        font-size:16px;
+        line-height: 28px;
+        color:$white;
+        font-family: $lato;
+        a {
+            font-size:16px;
+            line-height: 28px;
+            color:$white;
+            font-family: $lato;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+ul {
+    li {
+        list-style: none;
+        text-indent: -30px;
+        padding-left: 20px;
+        h4, p {
+            display: inline;
+            & + p {
+                display: revert;
+                text-indent: 0;
+                padding-left: 3px;
+            }
+        }
+        a {
+            color: $yellow;
+            &:hover {
+                color: $yellow;
+                text-decoration: underline;
+            }
+            h1 {
+                color: $white;
+                text-decoration: none;
+                &:hover {
+                    color: $yellow;
+                    text-decoration: underline;
+                }
+            }
+        }
+        &::before {
+            content: '\2022';
+            font-family: $lato;
+            color: $yellow;
+            font-size: 16px;
+            line-height: 28px;
+            margin-right: 20px;
+        }
+        ul {
+            margin-bottom: 0 !important;
+        }
+    }
+}

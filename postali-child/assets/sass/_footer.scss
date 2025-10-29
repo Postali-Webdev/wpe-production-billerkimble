@@ -1,0 +1,191 @@
+/**
+ * Footer Styles
+ *
+ * @package Postali Child
+ * @author Postali LLC
+**/
+
+.pre-footer {
+    padding:0;
+    .container {
+        max-width: 100%;
+        padding:0;
+        .columns {
+            justify-content: center;
+            align-items: normal;
+            .column-50 {
+                min-height: 500px;
+                width: 50%;
+                display: flex;
+                @media screen and (max-width: $screen-sm) {
+                    min-height: 275px;
+                }
+                &.left {
+                    justify-content: center;
+                    background-size: cover;
+                    background-position: top center;
+                    align-items: flex-end;
+                    text-align: center;
+                    padding: 0 10% 75px;
+                    @media screen and (max-width: $screen-sm) {
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        padding: 0 30px 30px;
+                        min-height: 350px;
+                    }
+                }
+                &.right {
+                    background:$teal;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 60px 10%;
+                    p.large {
+                        font-family: $josefin;
+                        text-align: center;
+                        font-size: 32px;
+                        font-weight: 700;
+                        margin-bottom: 45px !important;
+                        display: block;
+                        @media screen and (max-width: $screen-sm) {
+                            font-size: 24px;
+                            line-height: 27px;
+                            padding-top: 45px;
+                            margin-bottom: 30px !important;
+                        }
+                    }
+                    .form-container {
+                        width: 100%;
+                        @include contact-form-styles;
+                        @media screen and (max-width: $screen-sm) {
+                            padding-bottom: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.footer {
+    overflow: hidden;
+    position: relative;
+    &::before {
+        content: "";
+        width: 30%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: -100px;
+        background-image: url(/wp-content/uploads/2021/10/footer-background-wing.svg);
+        background-size: contain;
+        z-index: 0;
+        padding-bottom: 200px;
+        background-position: right center;
+        background-repeat: no-repeat;
+        @media screen and (max-width: $screen-sm) {
+            width: 50%;
+        }
+        @media screen and (max-width: $screen-xs) {
+            width: 100%;
+        }
+    }
+    ul li {
+        text-indent: revert;
+        padding-left: revert;
+    }
+    .container {
+        max-width: 90%;
+        .columns {
+            justify-content: space-between;
+            .column-50 {
+                flex-wrap: wrap;
+                display:flex;
+                &.footer-left {
+                    justify-content: space-between;
+                }
+                &.footer-right {
+                    justify-content: flex-start;
+                }
+            }
+            p > a {
+                color: $white;
+                &:hover {
+                    color: $yellow;
+                    text-decoration: underline;
+                }
+                &:active {
+                    color: $yellow !important;
+                    text-decoration: underline;
+                }
+            }
+            #footer_col1,
+            #footer_col2,
+            #footer_col3,
+            #footer_col4 {
+                display: block;
+                @media screen and (max-width: $screen-sm) {
+                    width: 90% !important;
+                    margin: 0 auto;
+                }
+                p.title {
+                    font-size: 24px;
+                    font-family: $josefin;
+                    padding-top: 30px;
+                    a {
+                        color:$white;
+                        text-decoration: none;
+                        &:hover {
+                            color:$yellow;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+            #footer_col1 {
+                width:50%;
+                text-align: center;
+            }
+            #footer_col2 {
+                width:25%;
+            }
+            #footer_col3,
+            #footer_col4 {
+                width: 50%;
+            }
+            
+            #footer_col4 {
+                p {
+                    margin-bottom: 20px !important;
+
+                    a {
+                        color:$yellow;
+                        text-decoration: underline;
+                    }
+                }
+                .map-embed {
+                    iframe {
+                        max-width: 100%;
+                        height: 70px;
+                    }
+                }
+            }
+        }
+    }
+    .menu {
+        margin-left: 0 !important;
+        li {
+            margin: 0;
+            &::before {
+                display: none;
+            }
+            a { 
+                color: $white;
+                &:hover {
+                    color: $yellow;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    
+}

@@ -1,0 +1,323 @@
+/**
+ * Template Front Page Styles
+ *
+ * @package Postali Child
+ * @author Postali LLC
+**/
+
+.home {
+    .content-container {
+        margin-top: 0;
+    }
+    #hero {
+        position:relative;
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+        height: 70vh;
+        min-height: 700px;
+        @media screen and (max-width: $screen-xl + 200) {
+            background-position: center top -15%;
+        }
+        @media screen and (min-width: $screen-sm + 1) {
+            background-attachment: fixed !important;
+        }
+        &:after {
+            @media screen and (min-width: $screen-sm + 1) {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(0deg, $blk 5%, rgba(255,255,255,0) 30%);
+            }
+        }
+        @media screen and (max-width: $screen-sm) {
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: auto;
+            background-position: center 20%;
+        }
+        @media screen and (max-width: 535px) {
+            background-position: center 13%;
+        }
+        #hero-content {
+            display:flex;
+            align-items: flex-end;
+            height:100%;
+            * {
+                z-index: 1;
+            }
+            @media screen and (max-width: $screen-sm) {
+                background-color: $dkgrey;
+                background: linear-gradient(0deg, $dkgrey 35%, rgba(255,255,255,0) 100%);
+                padding-top: 250px;
+            }
+            @media screen and (max-width: $screen-xs) {
+                background: linear-gradient(0deg, $dkgrey 60%, rgba(255,255,255,0) 80%);
+            }
+            .columns {
+                align-items: center;
+                .column-50 {
+                    &:last-of-type {
+                        position: relative;
+                        .hero-form {
+                            margin-top: 20px;
+                        }
+                    }
+                    @include contact-form-styles;
+                }
+            }
+        }
+    }
+    #hp-section_3 {
+        h2 {
+            text-align: left;
+        }
+        #home-results {
+            background:$teal;
+            padding:5%;
+            p {
+                margin-bottom:15px !important;
+                &.xlarge {
+                    line-break: anywhere;
+                    font-size: 47px;
+                }
+            }
+        }
+    } 
+    #hp-section_5 {
+        h2 {
+            text-transform: uppercase;
+        }
+        .spacer-60 {
+            @media screen and (max-width: $screen-sm) {
+                display: none;
+            }
+        }
+        .staff-holder {
+            @include staff-cards;
+            .staff-card {
+                height: 622px;
+                &_top {
+                    padding-bottom: 15px;
+                }
+                &_overlay {
+                    padding: 30px 30px 60px;
+                }
+            }
+        }
+        .btn {
+            &.team-btn {
+                background: none;
+                margin: 0 0 auto 0;
+                display: block;
+                text-align: right;
+                padding-right: 60px;
+                color: $white;
+                text-decoration: underline;
+                @media screen and (max-width: $screen-sm) {
+                    margin: 0 auto;
+                    text-align: center;
+                }
+                .arrow-icon {
+                    display: inline-block;
+                    padding-left: 15px;
+                    &::after {
+                        content: '\e91d';
+                        font-family: $icomoon;
+                        font-size: 8px;
+                        color: $yellow;
+                        transform: rotate(270deg);
+                        display: inline-block;
+                        position: relative;
+                        top: -2px;
+                    }
+                }
+            }
+        }
+
+        .below-attorneys-text {
+            margin-top: 100px;
+            .columns .column-50.centered {
+                text-align: left;
+                p, ul {
+                    font-style: italic;
+                }
+                ul li {
+                    text-indent: -29px;
+                    padding-left: 0;
+                }
+            }
+        }
+    }   
+    #hp-section_6 {
+        .column-66 {
+            @media screen and (min-width: $screen-sm + 1) {
+                width: 65% !important;
+            }
+        }
+    }
+    #hp-section_7 {
+        .container {
+            .columns {
+                justify-content: center;
+                @media screen and (max-width: $screen-sm) {
+                    display: block;
+                }
+                .practice-area-text {
+                    h3 {
+                        font-size: 23px;
+                    }
+                    p {
+                        font-style: italic;
+                        max-width: 230px;
+                        margin: 0 auto;
+                    }
+                }
+                .box {
+                    margin: 25px;
+                    display:flex;
+                    min-height:600px;
+                    width:calc(48% - 50px);
+                    align-items:normal;
+                    position:relative;
+                    background-size: cover;
+                    background-position: center;
+                    box-sizing:border-box;
+                    border:1px solid $teal;
+                    @media screen and (max-width: $screen-sm) {
+                        width: calc(100% - 50px);
+                    }
+                    .box-contents {
+                        position:relative;
+                        width:100%;
+                        overflow:hidden;
+                        z-index: 2;
+                        &::before {
+                            content: "";
+                            bottom: 0;
+                            height: 280px;
+                            position: absolute;
+                            left: 0;
+                            width: 100%;
+                            z-index: 0;
+                            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#101b1f+0,101b1f+88&0+0,1+88 */
+                            background: -moz-linear-gradient(top,  rgba(16,27,31,0) 0%, rgba(16,27,31,1) 80%); /* FF3.6-15 */
+                            background: -webkit-linear-gradient(top,  rgba(16,27,31,0) 0%,rgba(16,27,31,1) 80%); /* Chrome10-25,Safari5.1-6 */
+                            background: linear-gradient(to bottom,  rgba(16,27,31,0) 0%,rgba(16,27,31,1) 80%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00101b1f', endColorstr='#101b1f',GradientType=0 ); /* IE6-9 */
+                        }
+                    }
+                    .detail {
+                        position:absolute;
+                        display:block;
+                        height:100%;
+                        width:100%;
+                        padding:20px 40px;
+                        background:none;
+                        color:$white;
+                        justify-content:center;
+                        align-items:center;
+                        height:auto;
+                        box-sizing:border-box;
+                        align-items:flex-start;
+                        top:calc(100% - 132px);
+                        z-index: 1;
+                        @media screen and (max-width: $screen-xs) {
+                            padding:20px 25px;
+                            .btn {
+                                font-size: 14px;
+                                padding:18px 15px 15px;
+                            }
+                        }
+                        @media screen and (max-width: $screen-sm) {
+                            top: calc(100% - 128px);
+                            &#detail_1 {
+                                top:calc(100% - 132px);
+                            }
+                            &#detail_4 {
+                                top:calc(100% - 108px);
+                            }
+                            &#detail_2,
+                            &#detail_5 {
+                                top: calc(100% - 128px);
+                            }
+                        }
+                        @media screen and (max-width: $screen-xxs) {
+                            &#detail_4 {
+                                top:calc(100% - 155px);
+                            }
+                            &#detail_3,
+                            &#detail_2,
+                            &#detail_5 {
+                                top: calc(100% - 133px);
+                            }
+                        }
+                        @media screen and (max-width: $screen-xxs) {
+                            &#detail_3 {
+                                top: calc(100% - 180px);
+                            }
+                            &#detail_2,
+                            &#detail_5 {
+                                top: calc(100% - 155px);
+                            }
+                        }
+                        .title {
+                            font-family: $josefin;
+                            font-size: 24px;
+                            text-transform: uppercase;
+                        }
+                        .open_1,
+                        .open_2,
+                        .open_3,
+                        .open_4,
+                        .open_5 {
+                            position: absolute;
+                            right: 44px;
+                            top: 44px;
+                            font-size: 28px;
+                            transition:$trans;
+                            cursor: pointer;
+                            &::after {
+                                content:"\e918";
+                                font-family: $icomoon;
+                                top:0;
+                                left:0;
+                                width: 50px;
+                                height:50px;
+                                position:absolute;
+                                color:$yellow
+                            } 
+                        }
+                    }
+                    #detail {
+                        &.clicked {
+                            height:100%;
+                            top:0;
+                            background-color:rgba(16,27,31,.9);
+                            .open_1,
+                            .open_2,
+                            .open_3,
+                            .open_4,
+                            .open_5 {
+                                transition:$trans;
+                                &::after {
+                                   content:"\e90a";
+                                }
+                            }
+                        }
+                        &_1,
+                        &_2,
+                        &_3,
+                        &_4,
+                        &_5 {
+                            @extend #detail;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

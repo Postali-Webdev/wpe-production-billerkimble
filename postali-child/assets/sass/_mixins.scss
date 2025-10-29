@@ -1,0 +1,541 @@
+/**
+ * Theme footer
+ *
+ * @package Postali Child
+ * @author Postali LLC
+**/
+
+@mixin button-style {
+    text-transform: uppercase;
+    color: $blk;
+    margin: 15px 0;
+    padding: 18px 50px 15px;
+    background: $yellow;
+    border-radius: 50px;
+    line-height: 100%;
+    font-family: $josefin;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    &:hover {
+        background-color: $white;
+        color:$dkgrey;
+    }
+}
+
+@mixin contact-form-styles {
+    #gform_wrapper_1, #gform_wrapper_2, #gform_wrapper_3, #gform_wrapper_4, #gform_wrapper_5, #gform_wrapper_7 {
+        width: 100%;
+        .gfield_label {
+            font-family: $lato;
+            color: $white;
+            font-weight: normal;
+            .gfield_required {
+                color: $yellow;
+            }
+        }
+        input[type="email"], 
+        input[type="text"] {
+            padding: 12px;
+        }
+        input[type="submit"] {
+            @include button-style;
+            border: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+                 appearance: none;
+            display: block;
+            margin: 15px auto;
+        }
+        .gform_footer, 
+        .gform_page_footer {
+            padding: 16px 0 0;
+        }
+        #gform_submit_button_1, #gform_submit_button_2, #gform_submit_button_3 {
+            float: left;
+        }
+    }
+    #gform_wrapper_5 {
+        input[type="submit"] {
+            margin: 15px 0;
+            @media screen and (max-width: $screen-xxs) {
+                padding: 18px 15px 15px;
+                font-size: 13px;
+            }
+        }
+        .form-disclaimer {
+            border-bottom: solid 1px $transparent-white;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+    }
+
+    .form-consent {
+        font-size: 14px;
+        color: white;
+        line-height: 140%;
+    }
+}
+
+@mixin case-card-styles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85%;
+    padding: 60px 30px;
+    background: $blk;
+    border: 1px $teal solid;
+    @media screen and (max-width: $screen-sm) {
+        box-sizing: border-box;
+        margin: 10px auto !important;
+    }
+    h3 {
+        font-family: $josefin;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 27px;
+        color: $yellow;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    h4 {
+        font-family: $josefin;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 27px;
+        color: $white;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    p {
+        margin: 0 auto !important;
+        padding: 15px 0 20px;
+        text-align: center;
+    }
+    .btn {
+        margin: 0 auto;
+    }
+}
+
+@mixin two-column-hero {
+    justify-content: space-around;
+    @media screen and (max-width: $screen-sm) {
+        padding-top: 0;
+        display: block;
+        margin: 0 auto;
+        .spacer-120 {
+            display: none;
+        }
+    }
+    .column-50 {
+        @media screen and (max-width: $screen-sm) {
+            flex-basis: 100%;
+            .spacer-120 {
+                display: none;
+            }
+        }
+        &.title-holder {
+            padding: 40px 20px 40px 0;
+            flex-basis: 46%;
+            @media screen and (max-width: $screen-sm) {
+                padding: 30px 10px;
+                flex-basis: 100%;
+            }
+        }
+        &.card-holder,
+        &.form-holder {
+            padding: 40px 0px 40px 60px;
+            flex-basis: 52%;
+            @media screen and (max-width: $screen-sm) {
+                padding: 30px 10px;
+                flex-basis: 100%;
+            }
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        p {
+            &:last-of-type {
+                margin-bottom: 0 !important;
+            }
+        }
+        &:last-of-type {
+            border-left: 1px $white solid;
+            @media screen and (max-width: $screen-sm) {
+                border-left: none;
+            }
+        }
+    }
+}   
+
+@mixin accordions {
+    margin: 15px auto;
+    &_title {
+        display: grid;
+        grid-template-columns: 1fr 35px;
+        border: 1px solid $teal;
+        background: $blk;
+        padding: 30px 30px 20px;
+        h3 {
+            display: inline;
+            font-family: $josefin;
+            line-height: 27px;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: $white;
+        }
+        .icon {
+            display: inline-block;
+            top: -5px;
+            position: relative;
+            left: 12px;
+            &::after {
+                content: '\e90a';
+                color: $yellow;
+                display: block;
+                font-family: $icomoon;
+                font-size: 30px;
+                transform: rotate(135deg);
+                transition: transform 0.15s linear;
+            }
+        }
+        &.active {
+            .icon {
+                left: 15.5px;
+                top: -5.5px;
+                &::after {
+                    transform: rotate(0deg);
+                }
+            }
+        }
+    }
+    &_content {
+        display: none;
+        padding: 30px 2px 45px;
+    }
+}
+
+
+@mixin drop-down-select {
+    position: relative;
+    width: 100%;
+    height: 42px;
+    margin: 0 auto;
+    @media screen and (max-width:$screen-sm) {
+        margin-bottom: 20px;
+    }
+    #select-box {
+        #options-view-button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 3;
+            &:checked ~ #options {
+                border: 1px solid #e2eded;
+                border-color: #eaf1f1 #e4eded #dbe7e7 #e4eded;
+            }
+            &:checked ~ #options a {
+                display: block;
+                padding: 12px 14px;    
+            }
+            &:checked ~ #options #option-bg { display: block; }
+        }
+        #select-button {
+            position: relative;
+            height: 16px;
+            padding: 12px 14px;
+            background-color: $blk;
+            cursor: pointer;
+            height:100%;
+            &.brd { 
+                border-bottom: 2px solid $teal; 
+            }
+            #selected-value {
+                font-size: 22px;
+                line-height: 100%;
+                text-align: center;
+                font-family: $lato;
+                margin-top: -5px;
+            }
+            #chevrons {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                width: 12px;
+                padding: 9px 14px;
+            }
+        }
+        #options {
+            position: absolute;
+            top: 42px;
+            right: 0;
+            left: 0;
+            width: 100%;
+            margin: 0 auto;
+            background-color: #fff;
+            z-index: 2;
+            .options {
+                position: absolute;
+                left: 0;
+                width: 100%;
+                a {
+                    display: none;
+                    padding: 0;
+                    color:$teal;
+                }
+            }
+        }
+    }
+
+    .option, .label {
+        color: $teal;
+        font-size: 16px;
+    }
+    
+    .option {
+        position: relative;
+        line-height: 1;
+        transition: 0.3s ease all;
+        z-index: 2;
+        text-align: center;
+        &:hover ~ #option-bg { background-color: $teal; }
+        &:hover a { color: $white; }
+    }
+
+    a {
+        display: none;
+        padding: 0;
+        color:$teal;
+        font-family: $lato;
+
+    }
+
+    @-webkit-keyframes moveup {
+        0%{ bottom: -25px; opacity: 0;}
+        100%{ bottom: 0; opacity: 1;}
+    }
+
+    @keyframes moveup {
+        0%{ bottom: -25px; opacity: 0;}
+        100%{ bottom: 0; opacity: 1;}
+    }
+
+    @-webkit-keyframes movedown {
+        0%{ top: -25px; opacity: 0;}
+        100%{ top: 0; opacity: 1;}
+    }
+
+    @keyframes movedown {
+        0%{ top: -25px; opacity: 0;}
+        100%{ top: 0; opacity: 1;}
+    }
+
+    #option-bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 40px;
+        transition: 0.3s ease all;
+        z-index: 1;
+        display: none;
+    }
+
+    .option:nth-child(2):hover ~ #option-bg { top: 40px; }
+    .option:nth-child(3):hover ~ #option-bg { top: 80px; }
+    .option:nth-child(4):hover ~ #option-bg { top: 120px; }
+    .option:nth-child(5):hover ~ #option-bg { top: 160px; }
+    .option:nth-child(6):hover ~ #option-bg { top: 200px; }
+    .option:nth-child(7):hover ~ #option-bg { top: 240px; }
+    .option:nth-child(8):hover ~ #option-bg { top: 280px; }
+    .option:nth-child(9):hover ~ #option-bg { top: 320px; }
+    .option:nth-child(10):hover ~ #option-bg { top: 360px; }
+    .option:nth-child(11):hover ~ #option-bg { top: 400px; }
+    .option:nth-child(12):hover ~ #option-bg { top: 440px; }
+    .option:nth-child(13):hover ~ #option-bg { top: 480px; }
+    .option:nth-child(14):hover ~ #option-bg { top: 520px; }
+    .option:nth-child(15):hover ~ #option-bg { top: 560px; }
+    .option:nth-child(16):hover ~ #option-bg { top: 600px; }
+    .option:nth-child(17):hover ~ #option-bg { top: 640px; }
+    .option:nth-child(18):hover ~ #option-bg { top: 680px; }
+    .option:nth-child(19):hover ~ #option-bg { top: 720px; }
+}
+
+@mixin pagination-styles {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 30px 0 15px; 
+    .nav-links {
+        .page-numbers {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            border: 1px solid $teal;
+            border-radius: 50%;
+            font-family: $lato;
+            font-size: 16px;
+            line-height: 34px;
+            color: $white;
+            text-align: center;
+            &:hover {
+                background: $teal;
+            }
+            &.current {
+                border: 1px solid $yellow;
+                background: $yellow;
+                color: $blk;
+                font-weight: bold;
+            }
+            &.next,
+            &.prev {
+                border: none;
+                &:hover {
+                    background: none;
+                    .arrow-icon::before {
+                        color: $white;
+                    }
+                }
+                .arrow-icon {
+                    color: $yellow;
+                    &#next {
+                        &::before {
+                            content: '→';
+                            font-size: 24px;
+                            top: 3px;
+                            position: relative;
+                        }
+                    }
+                    &#prev {
+                        &::before {
+                            content: '←';
+                            font-size: 24px;
+                            top: 3px;
+                            position: relative;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin staff-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .staff-card {
+        display: block;
+        width: 500px;
+        height: 600px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center top;
+        margin: 30px 0;
+
+        @media screen and (max-width: $screen-sm) {
+            height: 525px;
+            width: 90%;
+            margin: 10px auto;
+        }
+
+        @media screen and (max-width: $screen-xs) {
+            height:450px
+        }
+
+        &_overlay {
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            width: 100%;
+            height: 100%;
+            border: 1px solid $teal;
+            background: linear-gradient(180deg, rgba(2,0,36,0) 25%, rgba(23,34,38,1) 85%);
+            padding: 30px;
+        }
+        &_top {
+            h3 {
+                font-size: 24px;
+                line-height: 1.1;
+                text-transform: uppercase;
+                color: $yellow;
+            }
+            .title {
+                font-size: 16px;
+                line-height: 2;
+                font-weight: $bold;
+                font-family: $josefin;
+                text-transform: uppercase;
+                color: $white;
+            }
+        }
+        &_lower {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 0;
+            @media screen and (max-width: $screen-sm) {
+                display: block;
+            }
+            a {
+                display: block;
+                font-family: $lato;
+                font-size: 16px;
+                line-height: 1.5;
+                color: $white;
+                text-align: center;
+                width: auto;
+                @media screen and (max-width: $screen-sm) {
+                    flex-basis: 100%;
+                }
+                &.phone {
+                    padding-right: 10px;
+                    @media screen and (max-width: $screen-sm) {
+                        padding: 0;
+                    }
+                }
+                &.email {
+                    padding-left: 10px;
+                    @media screen and (max-width: $screen-sm) {
+                        padding: 0;
+                    }
+                }
+                .yellow {
+                    display: inline-block;
+                    color: $yellow;
+                    padding-right: 10px;
+                }
+                &:first-of-type {
+                    border-right: 1px $white solid;
+                    @media screen and (max-width: $screen-sm) {
+                        border-right: none;
+                    }
+                }
+            }
+        }
+        .btn {
+            width: 50%;
+            margin: 0 auto;
+        }
+    }
+}

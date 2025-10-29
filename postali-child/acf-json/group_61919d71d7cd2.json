@@ -1,0 +1,151 @@
+{
+    "key": "group_61919d71d7cd2",
+    "title": "Case Results – Single",
+    "fields": [
+        {
+            "key": "field_61919dc460fa0",
+            "label": "Official Case Name",
+            "name": "case_name",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61919dda60fa1",
+            "label": "Case Number",
+            "name": "case_number",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61919d8d60f9f",
+            "label": "Amount",
+            "name": "amount",
+            "type": "text",
+            "instructions": "Include \"million\" – ex. 2.44 million",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61919e1a1b59e",
+            "label": "Issues",
+            "name": "issues",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Deductions for uniforms and tools": "Deductions for uniforms and tools",
+                "Dual jobs": "Dual jobs",
+                "Incorrect overtime and minimum wage rates": "Incorrect overtime and minimum wage rates",
+                "Off-the-clock work": "Off-the-clock work",
+                "Tip pool violation": "Tip pool violation",
+                "Under-reimbursement for vehicle costs": "Under-reimbursement for vehicle costs"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_61919ebc1b59f",
+            "label": "Summary",
+            "name": "summary",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_6191e725c0607",
+            "label": "Results",
+            "name": "results",
+            "type": "wysiwyg",
+            "instructions": "Add any additional info here as well – ex. \"*Andrew Biller negotiated this settlement while he practiced with his prior law firm.\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "results"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1648734084
+}
