@@ -26,6 +26,7 @@
                 </div>
                 <div id="footer_col2">
                     <p class="title">PAGES</p>
+                    <nav>
                     <?php
 							$args = array(
 								'container' => false,
@@ -33,11 +34,13 @@
 							);
 							wp_nav_menu( $args );
 						?>	
+                    </nav>
                 </div>
             </div>
             <div class="column-50 footer-right">
                 <div id="footer_col3">
                     <p class="title">PRACTICE AREAS</p>
+                    <nav>
                     <?php
 							$args = array(
 								'container' => false,
@@ -45,6 +48,7 @@
 							);
 							wp_nav_menu( $args );
 						?>	
+                    </nav>
                 </div>
                 <div id="footer_col4">
                     <p class="title">LOCATIONS</p>

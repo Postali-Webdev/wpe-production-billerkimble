@@ -57,13 +57,15 @@ endif; ?>
 			
 			<div id="header-top_right">
 				<div id="header-top_menu">
+                    <nav>
 						<?php
 							$args = array(
 								'container' => false,
 								'theme_location' => 'header-nav'
 							);
 							wp_nav_menu( $args );
-						?>			
+						?>	
+                    </nav>		
 					<div id="header-top_mobile">
 						<div id="menu-icon" class="toggle-nav">
 							<span class="line line-1"></span>
